@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import TitleBar from "./TitleBar/TitleBar";
-import SummaryOption from "./SummaryOption/SummaryOption";
+import Main from "./Main/Main";
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -92,7 +92,7 @@ class App extends Component {
     return (
       <div className="App">
         <TitleBar />
-        <SummaryOption />
+        <Main />
         <main>
           <section className="main__form">
             <h3>TECH SPECS AND CUSTOMIZATIONS</h3>

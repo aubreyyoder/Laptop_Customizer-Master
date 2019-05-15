@@ -4,7 +4,7 @@ import "./TitleBar.css";
 class TitleBar extends React.Component {
   render() {
     return (
-      <div className="TitleBar">
+      <div className="TitleBar header">
         <div className="TitleBar__heading">
           <h1>ELF Computing</h1>
           <h3>Laptops</h3>
