@@ -1,11 +1,11 @@
 import React from "react";
-import "./TitleBar.css";
+import "./Header.css";
 
-class TitleBar extends React.Component {
+class Header extends React.Component {
   render() {
     return (
-      <div className="TitleBar header">
-        <div className="TitleBar__heading">
+      <div className="Header">
+        <div className="Header__heading">
           <h1>ELF Computing</h1>
           <h3>Laptops</h3>
           <h5>Customize your laptop</h5>
@@ -15,4 +15,4 @@ class TitleBar extends React.Component {
   }
 }
 
-export default TitleBar;
+export default Header;

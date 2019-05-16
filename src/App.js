@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import TitleBar from "./TitleBar/TitleBar";
+import Header from "./Header/Header";
 import Main from "./Main/Main";
 
 class App extends React.Component {
@@ -91,7 +91,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <TitleBar />
+        <Header />
         <Main />
         <main>
           <section className="main__form">
