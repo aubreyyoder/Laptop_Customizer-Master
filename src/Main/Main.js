@@ -6,8 +6,9 @@ import Summary from "../Summary/Summary";
 class Main extends React.Component {
   render() {
     return (
-      <div clasName="Main">
+      <div className="Main">
         <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
+
         <TechSpecs />
         <Summary />
       </div>
