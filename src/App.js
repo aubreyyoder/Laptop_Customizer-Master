@@ -45,8 +45,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Main state={this.state} features={this.props.features} />
-        <main />
+        <Main
+          features={this.state.STORE.features}
+          selected={this.state.selected}
+          updateFeature={(index, item) => this.updateFeature(index, item)}
+        />
       </div>
     );
   }
