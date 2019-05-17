@@ -2,6 +2,10 @@ import React from "react";
 import "./Total.css";
 
 class Total extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.props.state;
+  }
   render() {
     const total = "";
     return (
