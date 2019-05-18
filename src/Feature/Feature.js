@@ -1,6 +1,5 @@
 import React from "react";
 import "./Feature.css";
-import Options from "../Options/Options";
 
 class Feature extends React.Component {
   render() {
@@ -34,15 +33,7 @@ class Feature extends React.Component {
         </div>
       );
     });
-    return (
-      <div className="feature-wrapper">
-        {features}
-        <Options
-          features={this.props.features}
-          selected={this.props.selected}
-        />
-      </div>
-    );
+    return <div className="Feature">{features}</div>;
   }
 }
 

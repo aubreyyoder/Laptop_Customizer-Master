@@ -1,8 +1,10 @@
 import React from "react";
 import "./App.css";
 import Header from "./Header/Header";
-import Main from "./Main/Main";
 import STORE from "./STORE";
+import Feature from "./Feature/Feature";
+import Summary from "./Summary/Summary";
+import Total from "./Total/Total";
 
 class App extends React.Component {
   constructor(props) {
@@ -41,12 +43,25 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Main
-          features={this.state.STORE.features}
-          selected={this.state.selected}
-          updateFeature={(index, item) => this.updateFeature(index, item)}
-        />
+        <header>
+          <Header />
+        </header>
+        <main>
+          <section slassName="main_form">
+            <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
+
+            <Feature
+              features={this.state.STORE.FEATURES}
+              selected={this.state.selected}
+              updateFeature={(index, item) => this.updateFeature(index, item)}
+            />
+          </section>
+          <section className="main_summary">
+            <h3>NEW GREENLEAF 2018</h3>
+            <Summary selected={this.state.selected} />
+            <Total selected={this.state.selected} />
+          </section>
+        </main>
       </div>
     );
   }

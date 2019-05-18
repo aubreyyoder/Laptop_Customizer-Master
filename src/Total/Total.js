@@ -5,7 +5,7 @@ class Total extends React.Component {
   render() {
     console.log(this.props.selected);
     const total = Object.keys(this.props.selected).reduce(
-      (acc, curr) => acc + this.state.selected[curr].cost,
+      (acc, curr) => acc + this.props.selected[curr].cost,
       0
     );
 
