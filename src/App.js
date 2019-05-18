@@ -2,11 +2,13 @@ import React from "react";
 import "./App.css";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
+import STORE from "./STORE";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      STORE,
       selected: {
         Processor: {
           name: "",
@@ -37,11 +39,6 @@ class App extends React.Component {
   }
 
   render() {
-    const total = Object.keys(this.state.selected).reduce(
-      (acc, curr) => acc + this.state.selected[curr].cost,
-      0
-    );
-
     return (
       <div className="App">
         <Header />

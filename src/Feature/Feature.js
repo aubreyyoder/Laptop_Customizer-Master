@@ -3,15 +3,11 @@ import "./Feature.css";
 import Options from "../Options/Options";
 
 class Feature extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = this.props.state;
-  }
   render() {
-    const features = Object.keys(this.state.features).map(key => {
+    const features = Object.keys(this.props.features).map(key => {
       const options = this.props.features[key].map((item, index) => {
         const selectedClass =
-          item.name === this.state.selected[key].name
+          item.name === this.props.selected[key].name
             ? "feature__selected"
             : "";
         const featureClass = "feature__option " + selectedClass;
@@ -19,7 +15,7 @@ class Feature extends React.Component {
           <li key={index} className="feature__item">
             <div
               className={featureClass}
-              onClick={e => this.updateFeature(key, item)}
+              onClick={e => this.props.updateFeature(key, item)}
             >
               {item.name}(
               {new Intl.NumberFormat("en-US", {
@@ -31,7 +27,6 @@ class Feature extends React.Component {
           </li>
         );
       });
-
       return (
         <div className="feature" key={key}>
           <div className="feature__name">{key}</div>
@@ -39,7 +34,15 @@ class Feature extends React.Component {
         </div>
       );
     });
-    return <Options state={this.state} features={this.props.features} />;
+    return (
+      <div className="feature-wrapper">
+        {features}
+        <Options
+          features={this.props.features}
+          selected={this.props.selected}
+        />
+      </div>
+    );
   }
 }
 

@@ -2,12 +2,13 @@ import React from "react";
 import "./Total.css";
 
 class Total extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = this.props.state;
-  }
   render() {
-    const total = "";
+    console.log(this.props.selected);
+    const total = Object.keys(this.props.selected).reduce(
+      (acc, curr) => acc + this.state.selected[curr].cost,
+      0
+    );
+
     return (
       <div className="Total">
         <div className="summary__total__label">Your Price:</div>

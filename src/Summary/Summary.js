@@ -4,10 +4,6 @@ import Feature from "../Feature/Feature";
 import Total from "../Total/Total";
 
 class Summary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = this.props.state;
-  }
   render() {
     const summary = Object.keys(this.state.selected).map(key => (
       <div className="summary__option" key={key}>
@@ -30,8 +26,11 @@ class Summary extends React.Component {
           {summary}
           <div className="summary__total" />
         </section>
-        <Feature state={this.state} features={this.props.features} />
-        <Total state={this.state} features={this.props.features} />
+        <Feature
+          features={this.props.features}
+          selected={this.props.selected}
+        />
+        <Total selected={this.state.selected} />
       </div>
     );
   }
